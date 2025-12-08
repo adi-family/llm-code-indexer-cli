@@ -8,8 +8,8 @@ use std::path::PathBuf;
 use tracing_subscriber::{fmt, prelude::*, EnvFilter};
 
 #[derive(Parser)]
-#[command(name = "adi")]
-#[command(about = "ADI - AI-powered code indexer and search")]
+#[command(name = "adi-llm-indexer")]
+#[command(about = "ADI LLM Indexer - AI-powered code indexer and search")]
 #[command(version)]
 struct Cli {
     /// Path to the project directory
@@ -214,7 +214,7 @@ fn init_project(project_path: &PathBuf) -> Result<()> {
     )?;
 
     println!("Initialized ADI in {}", project_path.display());
-    println!("Run 'adi index' to index the project");
+    println!("Run 'adi-llm-indexer index' to index the project");
 
     Ok(())
 }
@@ -444,7 +444,7 @@ async fn find_usages(project_path: &PathBuf, query: &str, limit: usize) -> Resul
             );
             println!("    {}:{}", symbol.file_path.display(), symbol.location.start_line + 1);
         }
-        println!("\nUse 'adi usages <id>' to see detailed usage for a specific symbol");
+        println!("\nUse 'adi-llm-indexer usages <id>' to see detailed usage for a specific symbol");
         return Ok(());
     }
 
@@ -465,7 +465,7 @@ async fn find_usages(project_path: &PathBuf, query: &str, limit: usize) -> Resul
             );
             println!("    {}:{}", symbol.file_path.display(), symbol.location.start_line + 1);
         }
-        println!("\nUse 'adi usages <id>' to see detailed usage for a specific symbol");
+        println!("\nUse 'adi-llm-indexer usages <id>' to see detailed usage for a specific symbol");
     }
 
     Ok(())
