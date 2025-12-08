@@ -1,6 +1,6 @@
-# ADI CLI
+# ADI Code Indexer - CLI
 
-Command-line interface for ADI (AI-powered Developer Intelligence) - a code indexing and semantic search tool.
+Command-line interface for ADI Code Indexer - a semantic code indexing and search tool.
 
 ## Overview
 
@@ -16,7 +16,7 @@ cargo build --release
 ## Commands
 
 ```
-adi init           Initialize ADI in current directory
+adi init           Initialize ADI Code Indexer in current directory
 adi index          Index the codebase
 adi search <query> Semantic search across code
 adi symbols        List indexed symbols
